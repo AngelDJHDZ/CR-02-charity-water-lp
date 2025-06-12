@@ -84,18 +84,23 @@ header {
   text-align: left;
   border-radius: 0;
   box-shadow: none;
-  height: 400px;      /* Set a fixed height for the hero section */
+  height: 700px;      /* Increased height for a taller hero image */
   max-width: 100%;
   overflow: hidden;   /* Hide anything outside the hero area */
+  margin-left: 0;    /* Remove left margin */
+  margin-right: 0;   /* Remove right margin */
+  width: 100%;       /* Make hero section use full width */
 }
 
 /* Hero image styles */
 .hero-img {
-  width: 70%;           /* Make image fill the hero section */
-  height: 100%;          /* Make image fill the hero section */
-  object-fit: cover;     /* Cover the area without stretching */
+  width: 100%;           /* Make the hero image fill the hero section */
+  height: 100%;          /* Make the hero image as tall as the hero section */
+  object-fit: cover;     /* Crop the image to fill the area */
   border-radius: 0;
   display: block;
+  margin-left: auto;     /* Center the image horizontally */
+  margin-right: auto;    /* Center the image horizontally */
 }
 
 /* Hero text box styles - overlay on image */
