@@ -32,9 +32,10 @@ Fonts:
 
 /* Set up the main font and background color for the whole page */
 body {
+  /* Use Proxima Nova font, with Arial and sans-serif as backups */
+  font-family: 'Proxima Nova', Arial, sans-serif;
   /* Use a soft background color */
   background-color: #fdfaf2; /* Updated to match new design */
-  font-family: Arial, sans-serif; /* Use a simple, common font */
   line-height: 1.5;
   color: #1a1a1a;
 }
@@ -86,19 +87,20 @@ header {
   text-align: left;
   border-radius: 0;
   box-shadow: none;
-  height: 900px;      /* Make the hero section much taller so the image covers more space */
+  height: 700px;      /* Make hero section shorter so the next section appears higher */
   max-width: 100%;
   overflow: hidden;   /* Hide anything outside the hero area */
   margin-left: 0;    /* Remove left margin */
   margin-right: 0;   /* Remove right margin */
   width: 100%;       /* Make hero section use full width */
-  margin-top: 30px; /* Moves the whole hero section down */
+  margin-top: 10px; /* Moves the whole hero section down */
+  margin-bottom: 0px; /* Change this to a smaller value to reduce space */
 }
 
 /* Hero image styles */
 .hero-img {
   width: 100%;           /* Make the hero image fill the hero section */
-  height: 100%;          /* Make the hero image as tall as the hero section */
+  height: 1200%;          /* Make the hero image as tall as the hero section */
   object-fit: cover;     /* Crop the image to fill the area */
   object-position: center Top;
   border-radius: 0;
@@ -106,6 +108,7 @@ header {
   margin-left: auto;     /* Center the image horizontally */
   margin-right: auto;    /* Center the image horizontally */
   z-index: 1;            /* Make sure the image stays behind the text */
+  
   position: relative;    /* Needed for stacking order */
 }
 
@@ -151,6 +154,7 @@ h2 {
   color: #2E9DF7; /* Primary blue */
   margin-top: 0;
   font-weight: bold;
+  margin-bottom: 24px; /* Add more space below h2 headings */
 }
 
 /* Call-to-Action Section Styles */
@@ -203,26 +207,14 @@ section {
 
 /* This media query applies styles when the screen is 600px wide or less (like on most phones) */
 @media (max-width: 600px) {
-  /* Make hero section padding smaller on small screens */
+  /* Make hero section shorter on small screens */
   .hero {
-    height: 100    /* Hero Section Styles */
-    .hero {
-      /* ...existing code... */
-      height: 500px;      /* Increase this number for a taller hero section */
-      /* ...existing code... */
-    }
-    
-    /* Hero image styles */
-    .hero-img {
-      width: 100%;        /* Make image fill the hero section horizontally */
-      height: 100%;       /* Make image fill the hero section vertically */
-      object-fit: cover;  /* Crop the image to fill the area */
-      /* ...existing code... */
-    }px; /* Shorter hero on small screens */
+    height: 300px; /* Shorter hero on small screens */
   }
   .hero-text {
     padding: 12px 8px;
     width: 90%;
+    height: 300%;
     font-size: 0.95em;
   }
   .hero-text h1 {
