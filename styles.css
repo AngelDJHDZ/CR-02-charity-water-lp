@@ -55,9 +55,11 @@ header {
   align-items: center; /* Vertically center items */
   padding: 20px;
   background-color: transparent;
-  position: sticky; /* Keep header at the top */
+  position: absolute; /* Place header over the hero image */
   top: 0;
-  z-index: 10;
+  left: 0;
+  width: 100%;
+  z-index: 20; /* Make sure header is above hero image and text */
 }
 
 /* Brand styles: logo and brand name */
@@ -71,7 +73,7 @@ header {
 
 .brand img {
   height: 32px; /* Make logo image match the brand text size */
-  margin-right: 10px;
+  margin-right: 0px;
 }
 
 /* Hero Section Styles */
@@ -84,12 +86,13 @@ header {
   text-align: left;
   border-radius: 0;
   box-shadow: none;
-  height: 700px;      /* Increased height for a taller hero image */
+  height: 900px;      /* Make the hero section much taller so the image covers more space */
   max-width: 100%;
   overflow: hidden;   /* Hide anything outside the hero area */
   margin-left: 0;    /* Remove left margin */
   margin-right: 0;   /* Remove right margin */
   width: 100%;       /* Make hero section use full width */
+  margin-top: 30px; /* Moves the whole hero section down */
 }
 
 /* Hero image styles */
@@ -97,18 +100,22 @@ header {
   width: 100%;           /* Make the hero image fill the hero section */
   height: 100%;          /* Make the hero image as tall as the hero section */
   object-fit: cover;     /* Crop the image to fill the area */
+  object-position: center Top;
   border-radius: 0;
   display: block;
   margin-left: auto;     /* Center the image horizontally */
   margin-right: auto;    /* Center the image horizontally */
+  z-index: 1;            /* Make sure the image stays behind the text */
+  position: relative;    /* Needed for stacking order */
 }
 
-/* Hero text box styles - overlay on image */
+/* Hero text box styles - move to the right side of the hero image */
 .hero-text {
   position: absolute;    /* Position over the image */
-  top: 50%;              /* Center vertically */
-  left: 50%;             /* Center horizontally */
-  transform: translate(-50%, -50%); /* Center the box */
+  top: 40%;              /* Move the text box lower (was 40%) */
+  right: 5%;             /* Move close to the right edge */
+  left: auto;            /* Remove left centering */
+  transform: translateY(-50%); /* Only center vertically */
   background-color: rgba(255, 242, 217, 0.95); /* Semi-transparent background */
   padding: 24px 32px;
   border-radius: 8px;
@@ -116,12 +123,13 @@ header {
   width: 400px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   text-align: center;
+  z-index: 2;            /* Make sure the text is above the image */
 }
 
 .hero-text h1 {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
-  margin-bottom: 12px;
+  margin-bottom: 5px;
   color: #1a1a1a;
 }
 
