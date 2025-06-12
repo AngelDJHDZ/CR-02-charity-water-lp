@@ -23,13 +23,20 @@ Fonts:
   This CSS uses the provided color palette and beginner-friendly styles.
 */
 
-/* Set up the main font and background color for the whole page */
-body {
-  background-color: #f4f8fb; /* Soft light blue for a fresh look */
-  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
+/* Reset default browser styles for all elements */
+* {
   margin: 0;
   padding: 0;
-  color: #222;
+  box-sizing: border-box;
+}
+
+/* Set up the main font and background color for the whole page */
+body {
+  /* Use a soft background color */
+  background-color: #fdfaf2; /* Updated to match new design */
+  font-family: Arial, sans-serif; /* Use a simple, common font */
+  line-height: 1.5;
+  color: #1a1a1a;
 }
 
 /* Add a slight shadow and rounded corners to each section for depth */
@@ -41,39 +48,71 @@ section {
   padding: 24px 16px;
 }
 
+/* Header styles: logo and navigation */
+header {
+  display: flex; /* Place items in a row */
+  justify-content: space-between; /* Space between logo and button */
+  align-items: center; /* Vertically center items */
+  padding: 20px;
+  background-color: transparent;
+  position: sticky; /* Keep header at the top */
+  top: 0;
+  z-index: 10;
+}
+
+/* Brand styles: logo and brand name */
+.brand {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.brand img {
+  height: 24px;
+  margin-right: 10px;
+}
+
 /* Hero Section Styles */
 .hero {
-  position: relative; /* Needed for overlay */
-  /* Set a background image that covers the whole section */
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
-  background-size: cover;      /* Make the image cover the whole area */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat;
-  color: #fff;                 /* White text for contrast */
-  text-align: center;          /* Center the text */
-  padding: 60px 20px;          /* Add space above and below */
-  border-radius: 0 0 16px 16px; /* Only round bottom corners */
-
-  /* Add a dark overlay for better text readability */
-  /* This uses a simple linear-gradient overlay */
-  background-blend-mode: darken;
-  background-color: rgba(46, 157, 247, 0.45); /* Blue overlay */
+  display: flex;
+  flex-direction: column; /* Stack on small screens */
+  padding: 20px;
+  /* Remove background image and overlay from previous hero style */
+  background: none;
+  color: inherit;
+  text-align: left;
+  border-radius: 0;
+  box-shadow: none;
 }
 
-/* Make the headline bold and modern */
-.hero h1 {
-  font-size: 2.5em;
+/* Hero image styles */
+.hero-img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Hero text box styles */
+.hero-text {
+  background-color: #fff2d9; /* Light yellow background */
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+.hero-text h1 {
+  font-size: 2rem;
   font-weight: bold;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Soft shadow for readability */
+  margin-bottom: 12px;
+  color: #1a1a1a;
 }
 
-/* Style the subheadline */
-.hero p {
-  font-size: 1.2em;
-  margin-top: 0;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.12);
+.hero-text p {
+  font-size: 1rem;
+  color: #333;
 }
 
 /* Story Section Styles */
@@ -111,23 +150,20 @@ h2 {
 /* Donate Button Styles */
 .donate-button {
   display: inline-block;
-  background-color: #4FCB53; /* Green */
-  color: #fff;
-  padding: 14px 32px;
-  text-decoration: none;
+  background-color: #fdd200; /* Bright yellow */
+  color: #000;
+  padding: 10px 18px;
   border-radius: 6px;
   font-weight: bold;
-  font-size: 1.1em;
-  margin-top: 18px;
-  box-shadow: 0 2px 8px rgba(79, 203, 83, 0.10);
-  transition: background 0.3s, transform 0.2s;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
   border: none;
   cursor: pointer;
 }
 
 /* Change button color when hovered */
 .donate-button:hover {
-  background-color: #159A48; /* Dark Green */
+  background-color: #e6bd00;
   transform: translateY(-2px) scale(1.04); /* Slight lift */
 }
 
@@ -151,12 +187,12 @@ section {
   }
 
   /* Make headline font size smaller so it fits on small screens */
-  .hero h1 {
+  .hero-text h1 {
     font-size: 1.4em;
   }
 
   /* Make subheadline font size smaller */
-  .hero p {
+  .hero-text p {
     font-size: 1em;
   }
 
@@ -194,5 +230,34 @@ section {
 
   .impact-image {
     width: 300px;
+  }
+}
+
+/* Responsive Design: Make hero section side by side on larger screens */
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row; /* Place image and text side by side */
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 60px 40px;
+  }
+
+  .hero-img {
+    flex: 1;
+    max-height: 600px;
+  }
+
+  .hero-text {
+    flex: 1;
+    margin-top: 0;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text p {
+    font-size: 1.1rem;
   }
 }
