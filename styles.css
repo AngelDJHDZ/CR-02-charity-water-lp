@@ -48,6 +48,8 @@ body {
   min-height: 100vh;
   /* Remove default margin so the image fills the screen */
   margin: 0;
+  /* Responsive text for the whole page */
+  font-size: 18px; /* Base font size for desktop */
 }
 
 /* Add a slight shadow and rounded corners to each section for depth */
@@ -57,6 +59,8 @@ section {
   box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07); /* Soft blue shadow */
   margin: 24px 10px; /* Space between sections */
   padding: 24px 16px;
+  /* Responsive section padding and font size */
+  font-size: 1em; /* Default font size for sections */
 }
 
 /* Header styles: logo and navigation */
@@ -82,11 +86,15 @@ header {
   font-size: 1.25rem;
   font-weight: bold;
   color: #222;
+  /* Allow brand to shrink and wrap on small screens */
+  flex-wrap: wrap;
 }
 
+/* Make sure the brand logo and text are responsive */
 .brand img {
-  height: 32px; /* Make logo image match the brand text size */
-  margin-right: 0px;
+  height: 32px;
+  margin-right: 8px;
+  max-width: 100%;
 }
 
 /* Hero Section Styles */
@@ -118,7 +126,7 @@ header {
 /* Hero text box styles - move to the right side of the hero image */
 .hero-text {
   position: absolute;    /* Position over the image */
-  top: 50%;              /* Center vertically */
+  top: 35%;              /* Move the hero text higher */
   right: 4%;             /* Add space to the right edge */
   left: auto;            /* Remove left centering */
   transform: translateY(-50%); /* Only center vertically */
@@ -130,18 +138,17 @@ header {
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   text-align: center;
   z-index: 2;            /* Make sure the text is above the image */
+  font-size: 0.9em;      /* Make the hero text smaller */
+  /* Responsive hero text box and text */
 }
 
+/* Responsive headline */
 .hero-text h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #1a1a1a;
+  font-size: 2em; /* Make the headline smaller */
 }
 
 .hero-text p {
-  font-size: 1rem;
-  color: #333;
+  font-size: 0.9em; /* Make the paragraph text smaller */
 }
 
 /* Story Section Styles */
@@ -183,6 +190,8 @@ h2 {
   border-radius: 10px;
   margin-bottom: 16px;
   box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
+  /* Responsive impact story image */
+  height: auto;
 }
 
 /* Donate Button Styles */
@@ -197,9 +206,9 @@ h2 {
   transition: background-color 0.3s ease;
   border: none;
   cursor: pointer;
-  /* Add space above the donate button at the bottom of the page */
   margin-top: 0px;
-  margin-bottom: 0px
+  margin-bottom: 0px;
+  font-size: 1em; /* Default size */
 }
 
 /* Change button color when hovered */
@@ -208,9 +217,114 @@ h2 {
   transform: translateY(-2px) scale(1.04); /* Slight lift */
 }
 
-/* Add some spacing between sections */
-section {
-  margin-bottom: 20px;
+/* Make images and text responsive for all devices */
+
+/* Make all images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive adjustments for tablets */
+@media (max-width: 900px) {
+  body {
+    font-size: 16px;
+  }
+  .hero-text {
+    width: 320px;
+    font-size: 1em;
+    padding: 16px 10px;
+  }
+  .hero-text h1 {
+    font-size: 2em;
+  }
+  .impact-image {
+    max-width: 220px;
+  }
+  .donate-button {
+    font-size: 0.95em;
+    padding: 8px 14px;
+  }
+}
+
+/* This media query applies styles when the screen is 600px wide or less (like on most phones) */
+@media (max-width: 600px) {
+  body {
+    font-size: 15px;
+  }
+  .hero {
+    position: static;
+    height: auto;
+    min-height: 350px;
+    display: block;
+  }
+  /* Move the hero text box higher on mobile */
+  .hero-text {
+    position: absolute;
+    top: 35%; /* Move higher up the hero image */
+    right: 4%;
+    left: auto;
+    width: 110px;
+    height: 110px;
+    max-width: 110px;
+    max-height: 110px;
+    padding: 6px 4px;
+    font-size: 0.7em;
+    transform: translateY(-50%);
+    background-color: rgba(255, 242, 217, 0.95);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+  }
+  .hero-text h1 {
+    font-size: 0.9em;
+    margin-bottom: 4px;
+    line-height: 1.1;
+  }
+  .hero-text p {
+    font-size: 0.7em;
+    line-height: 1.1;
+    margin-bottom: 0;
+  }
+  section {
+    font-size: 0.95em;
+    padding: 12px 4px;
+  }
+  .impact-image {
+    max-width: 120px;
+  }
+  .donate-button {
+    font-size: 0.85em;
+    padding: 6px 10px;
+  }
+}
+
+/* Responsive adjustments for large screens */
+@media (min-width: 1200px) {
+  body {
+    font-size: 20px;
+  }
+  .hero-text {
+    width: 500px;
+    font-size: 1.2em;
+    padding: 32px 40px;
+  }
+  .hero-text h1 {
+    font-size: 3.5em;
+  }
+  .impact-image {
+    max-width: 400px;
+  }
+  .donate-button {
+    font-size: 1.1em;
+    padding: 12px 22px;
+  }
 }
 
 /* 
@@ -218,69 +332,6 @@ section {
   Media queries help make your website look good on different screen sizes,
   like phones (small screens) and computers (large screens).
 */
-
-/* This media query applies styles when the screen is 600px wide or less (like on most phones) */
-@media (max-width: 600px) {
-  .hero {
-    position: static;
-    height: auto;
-    min-height: 350px;
-    display: block;
-  }
-  /* Make the hero text box a small square with smaller text on mobile */
-  .hero-text {
-    position: absolute;
-    top: 28%;
-    right: 4%;
-    left: auto;
-    width: 140px;      /* Set width for square */
-    height: 140px;     /* Set height for square */
-    max-width: 140px;
-    max-height: 140px;
-    padding: 8px 6px;
-    font-size: 0.8em;  /* Make all text smaller */
-    transform: translateY(-50%);
-    background-color: rgba(255, 242, 217, 0.95);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    z-index: 2;
-    display: flex;           /* Use flex to center content in the box */
-    flex-direction: column;  /* Stack text vertically */
-    justify-content: center; /* Center vertically */
-    align-items: center;     /* Center horizontally */
-    overflow: hidden;        /* Hide overflow text */
-    text-align: center;
-  }
-
-  .hero-text h1 {
-    font-size: 1em;
-    margin-bottom: 4px;
-    line-height: 1.1;
-  }
-
-  .hero-text p {
-    font-size: 0.8em;
-    line-height: 1.1;
-    margin-bottom: 0;
-  }
-
-  /* Make story and call-to-action sections have less padding */
-  .story,
-  .call-to-action,
-  .donation-section {
-    padding: 14px 8px;
-  }
-
-  /* Make impact story image smaller and stack above the text */
-  .impact-content {
-    display: block; /* Stack items vertically */
-    text-align: center;
-  }
-
-  .impact-image {
-    width: 90%;    /* Make image take up most of the width */
-    max-width: 220px;
-  }
-}
 
 /* This media query applies styles when the screen is wider than 600px (like on tablets and computers) */
 @media (min-width: 601px) {
@@ -326,5 +377,28 @@ section {
 
   .hero-text p {
     font-size: 1.1rem;
+  }
+}
+
+/* Responsive adjustments for the header and brand on small screens */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column; /* Stack logo and button vertically */
+    align-items: flex-start; /* Align items to the left */
+    padding: 10px 6px;
+  }
+  .brand {
+    font-size: 1em;
+    margin-bottom: 6px;
+  }
+  .brand img {
+    height: 24px; /* Make logo smaller on mobile */
+    margin-right: 6px;
+  }
+  .donate-button {
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 6px;
   }
 }
