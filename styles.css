@@ -38,8 +38,6 @@ body {
   background-color: #fdfaf2; /* Updated to match new design */
   line-height: 1.5;
   color: #1a1a1a;
-  /* Set a background image for the whole page */
-  background-image: url('your-image.jpg'); /* Change 'your-image.jpg' to the name of your image file */
   /* Make the image cover the whole screen */
   background-size: cover;
   /* Keep the image centered */
@@ -165,10 +163,13 @@ h2 {
 
 /* Call-to-Action Section Styles */
 .call-to-action {
-  background-color: #FFC907; /* Primary Yellow */
+  background-color: #159A48; /* Changed to dark green */
   color: #222;
   text-align: center;
-  padding: 70px 20px;
+  padding: 50px 20px;
+  margin-top: 10px; /* Add more space above the call-to-action section */
+  margin-bottom: 20px /* Add space below the call-to-action section */
+
 }
 
 /* Style the impact story image */
