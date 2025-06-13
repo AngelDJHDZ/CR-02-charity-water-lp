@@ -33,11 +33,23 @@ Fonts:
 /* Set up the main font and background color for the whole page */
 body {
   /* Use Proxima Nova font, with Arial and sans-serif as backups */
-  font-family: 'Proxima Nova', Arial, sans-serif;
+  font-family: 'Proxima Nova', Avenir;
   /* Use a soft background color */
   background-color: #fdfaf2; /* Updated to match new design */
   line-height: 1.5;
   color: #1a1a1a;
+  /* Set a background image for the whole page */
+  background-image: url('your-image.jpg'); /* Change 'your-image.jpg' to the name of your image file */
+  /* Make the image cover the whole screen */
+  background-size: cover;
+  /* Keep the image centered */
+  background-position: center;
+  /* Do not repeat the image */
+  background-repeat: no-repeat;
+  /* Make sure the body is at least as tall as the screen */
+  min-height: 100vh;
+  /* Remove default margin so the image fills the screen */
+  margin: 0;
 }
 
 /* Add a slight shadow and rounded corners to each section for depth */
@@ -81,14 +93,12 @@ header {
 /* Hero Section Styles */
 .hero {
   position: relative; /* Needed for overlaying text */
-  display: block;     /* Remove flex for overlay effect */
-  padding: 500;         /* Remove extra padding */
-  background: none;
-  color: inherit;
-  text-align: left;
-  border-radius: 0;
-  box-shadow: none;
-  min-height: 10vh;    /* Make hero cover the whole screen */
+  /* Use a background image instead of an <img> tag */
+  background-image: url('your-hero-image.jpg'); /* <-- Replace with your image path */
+  background-size: cover;   /* Make the background image bigger */
+  background-position: center; /* Center the image at the top */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  min-height: 100vh;    /* Make hero cover the whole screen */
   max-width: 100%;
   overflow: hidden;   /* Hide anything outside the hero area */
   margin-left: 0;    /* Remove left margin */
@@ -96,21 +106,16 @@ header {
   width: 100%;       /* Make hero section use full width */
   margin-top: 15px; /* Moves the whole hero section down */
   margin-bottom: 2px; /* Change this to a smaller value to reduce space */
+  display: block;     /* Keep block display for simple layout */
+  text-align: left;
+  border-radius: 0;
+  box-shadow: none;
+  color: inherit;
+  /* Remove the padding property if not needed */
 }
 
-/* Hero image styles */
-.hero-img {
-  width: 100%;        /* Image fills the width */
-  height: 100%;       /* Image fills the height of the hero box */
-  object-fit: cover;  /* Fill the area and crop if needed */
-  object-position: center top; /* Center the image at the top */
-  border-radius: 0; /* No rounded corners */
-  display: block; /* Make sure the image is a block element */
-  margin-left: 0; /* No space on the left */
-  margin-right: 0; /* No space on the right */
-  z-index: 1; /* Keep image behind text */
-  position: relative; /* Needed for stacking order */
-}
+/* Remove the .hero-img styles and <img> usage in HTML,
+   since the background image is now set in CSS. */
 
 /* Hero text box styles - move to the right side of the hero image */
 .hero-text {
