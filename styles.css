@@ -54,13 +54,14 @@ header {
   display: flex; /* Place items in a row */
   justify-content: space-between; /* Space between logo and button */
   align-items: center; /* Vertically center items */
-  padding: 20px;
+  padding: 15px;
   background-color: transparent;
   position: absolute; /* Place header over the hero image */
   top: 0;
   left: 0;
   width: 100%;
   z-index: 20; /* Make sure header is above hero image and text */
+  margin-bottom: 100px; /* Added space below the header */
 }
 
 /* Brand styles: logo and brand name */
@@ -81,42 +82,41 @@ header {
 .hero {
   position: relative; /* Needed for overlaying text */
   display: block;     /* Remove flex for overlay effect */
-  padding: 0;         /* Remove extra padding */
+  padding: 500;         /* Remove extra padding */
   background: none;
   color: inherit;
   text-align: left;
   border-radius: 0;
   box-shadow: none;
-  height: 700px;      /* Make hero section shorter so the next section appears higher */
+  min-height: 10vh;    /* Make hero cover the whole screen */
   max-width: 100%;
   overflow: hidden;   /* Hide anything outside the hero area */
   margin-left: 0;    /* Remove left margin */
   margin-right: 0;   /* Remove right margin */
   width: 100%;       /* Make hero section use full width */
-  margin-top: 10px; /* Moves the whole hero section down */
-  margin-bottom: 0px; /* Change this to a smaller value to reduce space */
+  margin-top: 15px; /* Moves the whole hero section down */
+  margin-bottom: 2px; /* Change this to a smaller value to reduce space */
 }
 
 /* Hero image styles */
 .hero-img {
-  width: 100%;           /* Make the hero image fill the hero section */
-  height: 1200%;          /* Make the hero image as tall as the hero section */
-  object-fit: cover;     /* Crop the image to fill the area */
-  object-position: center Top;
-  border-radius: 0;
-  display: block;
-  margin-left: auto;     /* Center the image horizontally */
-  margin-right: auto;    /* Center the image horizontally */
-  z-index: 1;            /* Make sure the image stays behind the text */
-  
-  position: relative;    /* Needed for stacking order */
+  width: 100%;        /* Image fills the width */
+  height: 100%;       /* Image fills the height of the hero box */
+  object-fit: cover;  /* Fill the area and crop if needed */
+  object-position: center top; /* Center the image at the top */
+  border-radius: 0; /* No rounded corners */
+  display: block; /* Make sure the image is a block element */
+  margin-left: 0; /* No space on the left */
+  margin-right: 0; /* No space on the right */
+  z-index: 1; /* Keep image behind text */
+  position: relative; /* Needed for stacking order */
 }
 
 /* Hero text box styles - move to the right side of the hero image */
 .hero-text {
   position: absolute;    /* Position over the image */
-  top: 40%;              /* Move the text box lower (was 40%) */
-  right: 5%;             /* Move close to the right edge */
+  top: 50%;              /* Center vertically */
+  right: 4%;             /* Add space to the right edge */
   left: auto;            /* Remove left centering */
   transform: translateY(-50%); /* Only center vertically */
   background-color: rgba(255, 242, 217, 0.95); /* Semi-transparent background */
@@ -143,15 +143,16 @@ header {
 
 /* Story Section Styles */
 .story {
-  background-color: #8BD1CB; /* Secondary Light Blue */
+  background-color: rgba(255, 242, 217, 0.95); /* Match hero text box color */
   color: #222;
   text-align: center;
-  padding: 30px 20px;
+  padding: 30px 0px 10px 0px; /* Less space below Our Story */
+  font-size: 1.5rem; /* Increased font size for Our Story section */
 }
 
 /* Add accent color to section headings */
 h2 {
-  color: #2E9DF7; /* Primary blue */
+  color: #1a1a1a; /* Match hero image text color */
   margin-top: 0;
   font-weight: bold;
   margin-bottom: 24px; /* Add more space below h2 headings */
@@ -162,7 +163,7 @@ h2 {
   background-color: #FFC907; /* Primary Yellow */
   color: #222;
   text-align: center;
-  padding: 30px 20px;
+  padding: 70px 20px;
 }
 
 /* Style the impact story image */
@@ -186,6 +187,9 @@ h2 {
   transition: background-color 0.3s ease;
   border: none;
   cursor: pointer;
+  /* Add space above the donate button at the bottom of the page */
+  margin-top: 0px;
+  margin-bottom: 0px
 }
 
 /* Change button color when hovered */
@@ -218,7 +222,7 @@ section {
     font-size: 0.95em;
   }
   .hero-text h1 {
-    font-size: 1.2em;
+    font-size: 1.5em;
   }
 
   /* Make story and call-to-action sections have less padding */
