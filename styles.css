@@ -221,18 +221,46 @@ section {
 
 /* This media query applies styles when the screen is 600px wide or less (like on most phones) */
 @media (max-width: 600px) {
-  /* Make hero section shorter on small screens */
   .hero {
-    height: 300px; /* Shorter hero on small screens */
+    position: static;
+    height: auto;
+    min-height: 350px;
+    display: block;
   }
+  /* Make the hero text box a small square with smaller text on mobile */
   .hero-text {
-    padding: 12px 8px;
-    width: 90%;
-    height: 300%;
-    font-size: 0.95em;
+    position: absolute;
+    top: 28%;
+    right: 4%;
+    left: auto;
+    width: 140px;      /* Set width for square */
+    height: 140px;     /* Set height for square */
+    max-width: 140px;
+    max-height: 140px;
+    padding: 8px 6px;
+    font-size: 0.8em;  /* Make all text smaller */
+    transform: translateY(-50%);
+    background-color: rgba(255, 242, 217, 0.95);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    z-index: 2;
+    display: flex;           /* Use flex to center content in the box */
+    flex-direction: column;  /* Stack text vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center;     /* Center horizontally */
+    overflow: hidden;        /* Hide overflow text */
+    text-align: center;
   }
+
   .hero-text h1 {
-    font-size: 1.5em;
+    font-size: 1em;
+    margin-bottom: 4px;
+    line-height: 1.1;
+  }
+
+  .hero-text p {
+    font-size: 0.8em;
+    line-height: 1.1;
+    margin-bottom: 0;
   }
 
   /* Make story and call-to-action sections have less padding */
