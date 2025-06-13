@@ -35,7 +35,7 @@ body {
   /* Use Proxima Nova font, with Arial and sans-serif as backups */
   font-family: 'Proxima Nova', Avenir;
   /* Use a soft background color */
-  background-color: #fdfaf2; /* Updated to match new design */
+  background-color: rgba(255, 242, 217, 0.95); /* Light yellow background for the whole page */
   line-height: 1.5;
   color: #1a1a1a;
   /* Make the image cover the whole screen */
@@ -146,7 +146,7 @@ header {
 
 /* Story Section Styles */
 .story {
-  background-color: rgba(255, 242, 217, 0.95); /* Match hero text box color */
+  background-color: ffff; /* Match hero text box color */
   color: #222;
   text-align: center;
   padding: 30px 0px 10px 0px; /* Less space below Our Story */
@@ -163,7 +163,7 @@ h2 {
 
 /* Call-to-Action Section Styles */
 .call-to-action {
-  background-color: #159A48; /* Changed to dark green */
+  background-color: #ffffff; /* Changed to dark green */
   color: #222;
   text-align: center;
   padding: 50px 20px;
